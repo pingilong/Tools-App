@@ -1,6 +1,14 @@
 import pyfiglet
 import termcolor2
 
+"""
+
+Put everything in Kernel .
+Run the from here .
+
+"""
+
+# Import * from Kernel .
 from kernel import *
 
 # ============= functions =============
