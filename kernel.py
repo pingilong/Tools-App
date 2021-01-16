@@ -1,3 +1,5 @@
+import termcolor2
+
 import math
 
 
@@ -636,6 +638,7 @@ def searchEs():
 
         import ctypes
         print(termcolor2.colored("\n\nBackground Changer", "yellow"))
+
 
 def change_wallpaper():
     try:
