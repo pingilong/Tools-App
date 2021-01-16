@@ -1147,3 +1147,4 @@ while a < 1:
         change_wallpaper()
     elif firstQ == "0":
         a += 1
+# print("Mohammad")
