@@ -35,5 +35,8 @@ If you have some feedbacks or suggestions please write it in comments
 New versions come soon
 ## tip4:
 If you can, please help me in this project!
+## tip5:
+Sceenshot of all parts are in issues part!
+You must see them
 
 Thanks for your warm look
