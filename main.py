@@ -1,72 +1,51 @@
 import pyfiglet
 import termcolor2
-
+import math
+import time 
+from jdatetime import JalaliToGregorian
+import datetime as dt
+import wikipedia
 # ============= functions =============
-
-# ============= labels =============
-
-name = pyfiglet.figlet_format("Tool App")
-print(termcolor2.colored(name,"red"))
-
-by = "By: Mohammad Shokouhian"
-print(termcolor2.colored(by,"green",attrs=["bold","underline"]))
-
-# ============= if =============
-
-a = 0
-while a < 1:
-    print(termcolor2.colored("\n[1] Caculator","magenta"))
-    print(termcolor2.colored("[2] Time tool","magenta"))
-    print(termcolor2.colored("[3] Wikipedia Search","magenta"))
-    print(termcolor2.colored("[4] Rock-Scissor-Paper","magenta"))
-    print(termcolor2.colored("[5] Guess Number","magenta"))
-    print(termcolor2.colored("[6] Text to Speech","magenta"))
-    print(termcolor2.colored("[7] Shut down","magenta"))
-    print(termcolor2.colored("[8] Backgroud Changer","magenta"))
-    print(termcolor2.colored("[0] Quit\n","magenta"))
-    firstQ = input(">>> What would you like to do: ")
-    
-    if firstQ == "1":
-        import math
-        # ============= functions(calculator) =============
-        def plus(x,y):
-            result = x + y
-            res = termcolor2.colored(result,"red")
-            print(f"{x} + {y} = {res}")
+# ============= functions(calculator) =============
+def plus(x,y):
+    result = x + y
+    res = termcolor2.colored(result,"red")
+    print(f"{x} + {y} = {res}")
             
-        def minus(x,y):
-            result = x - y
-            res = termcolor2.colored(result,"red")
-            print(f"{x} - {y} = {res}")
+def minus(x,y):
+    result = x - y
+    res = termcolor2.colored(result,"red")
+     print(f"{x} - {y} = {res}")
 
-        def multy(x,y):
-            result = x * y
-            res = termcolor2.colored(result,"red")
-            print(f"{x} × {y} =  {res}")
+def multy(x,y):
+    result = x * y
+    res = termcolor2.colored(result,"red")
+    print(f"{x} × {y} =  {res}")
 
-        def dev(x,y):
-            result = x / y
-            res = termcolor2.colored(result,"red")
-            print(f"{x} ÷ {y} = {res}")
+def dev(x,y):
+    result = x / y
+    res = termcolor2.colored(result,"red")
+    print(f"{x} ÷ {y} = {res}")
 
-        def sqrtfunc(x):
-            result = math.sqrt(x)
-            res = termcolor2.colored(result,"red")
-            print(f"Result is: {res}")
+def sqrtfunc(x):
+    result = math.sqrt(x)
+    res = termcolor2.colored(result,"red")
+    print(f"Result is: {res}")
 
-        def tavan(x,y):
-            result = x ** y
-            res = termcolor2.colored(result,"red")
-            print(f"{x} ^ {y} = {res}")
+def tavan(x,y):
+    result = x ** y
+    res = termcolor2.colored(result,"red")
+    print(f"{x} ^ {y} = {res}")
 
-        def tangent(x):
-            result = math.tan(x)
-            res = termcolor2.colored(result,"red")
-            print(f"tangent of {x} = {res}")
+def tangent(x):
+    result = math.tan(x)
+    res = termcolor2.colored(result,"red")
+    print(f"tangent of {x} = {res}")
+    
 
-        # ============= run func =============
+# ============= run func calcu.. =============
 
-        def runcalc():
+def runcalc():
             termcolor2.colored("\n\nCalculator","yellow")
             a = 0
             while a < 1:
@@ -146,32 +125,11 @@ while a < 1:
                             print(termcolor2.colored(tryAgain,"red","on_white",attrs=["bold"]))
                     z -= 1
                 except:
-                    print(termcolor2.colored("ٍError!","red","on_white",attrs=["bold"]))
+                    print(termcolor2.colored("ٍError!","red","on_white",attrs=["bold"])
             a -= 1
-        runcalc()
-    elif firstQ == "2":
-        import time 
-        from jdatetime import JalaliToGregorian
-        import datetime as dt
-        # import termcolor2
-
-        print(termcolor2.colored("\nTime Tool\n\n","yellow"))
-
-        # ============= variables =============
-
-        todayMiladi = time.localtime()
-        year = todayMiladi[0]
-        month = todayMiladi[1]
-        day = todayMiladi[2]
-        hour = todayMiladi[3]
-        minute = todayMiladi[4]
-        second = todayMiladi[5]
-        dayOfWeek = todayMiladi[6]
-        dayOfYear = todayMiladi[7]
-
-        # ============= functions(time) =============
-
-        def animalshamsi(year):
+                          
+# functions (time)
+def animalshamsi(year):
             trueYear = year - 7
             if trueYear % 12 == 0:
                 print(termcolor2.colored("your birth year is : <Mouse>","green"))
@@ -209,8 +167,9 @@ while a < 1:
             elif trueYear % 12 == 11:
                 print(termcolor2.colored("your birth year is : <Pig>","green"))
                 print(termcolor2.colored("================\n","red"))
+                          
 
-        def animalmiladi(year):
+def animalmiladi(year):
             trueYear = year - 4
             if trueYear % 12 == 0:
                 print(termcolor2.colored("your birth year is : <Mouse>","green"))
@@ -249,18 +208,21 @@ while a < 1:
                 print(termcolor2.colored("your birth year is : <Pig>","green"))
                 print(termcolor2.colored("================\n","red"))
 
-        def todayMiladifunc():
+                          
+def todayMiladifunc():
             print(termcolor2.colored("\nGregorian date:","yellow"))
             print(termcolor2.colored(f"{year}/{month}/{day}","green"))
             print(termcolor2.colored(f"\n{hour} : {minute} : {second}","blue"))
             print(termcolor2.colored(f"{dayOfYear} days from {year}\n","green"))
+                          
 
-        def gLeapYear(y):
+ def gLeapYear(y):
             if (y%4==0) and ((y%100!=0) or (y%400==0)):
                 return True
             else: 
                 return False
 
+                          
         def sLeapYear(y):
             ary = [1, 5, 9, 13, 17, 22, 26, 30]
             result = False
@@ -269,6 +231,7 @@ while a < 1:
                 result = True
             return result
 
+                          
         def todayShamsifunc(gyear, gmonth, gday):
             _gl = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
             _g  = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
@@ -331,7 +294,8 @@ while a < 1:
             print(termcolor2.colored("Shamsi date:","yellow"))
             print(termcolor2.colored(f"{sd}/{sm}/{sy}","green"))
 
-        def miladiToShamsi(gyear, gmonth, gday):
+        
+def miladiToShamsi(gyear, gmonth, gday):
             _gl = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
             _g  = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
             
@@ -375,7 +339,7 @@ while a < 1:
                     sm = int(gd/30) + 10 
             # result = [sy, sm, sd]
             # return result
-            print(termcolor2.colored(f"\nResult: \n{sd}/{sm}/{sy}\n","green"))
+            print(termcolor2.colored(f"\nResult: \n{sd}/{sm}/{sy}\n","green"))        
 
         def shamsiToMiladi(gyear, gmonth, gday):
             gregorian_date_obj = JalaliToGregorian(gyear,gmonth,gday)
@@ -388,7 +352,7 @@ while a < 1:
             print(termcolor2.colored("==============\n","red"))
 
 
-        def daysOfLifeMiladi():
+def daysOfLifeMiladi():
             year2 = int(input("\nYear of birth: "))
             month2 = int(input("Month of birth: "))
             day2 = int(input("Day of birth: "))
@@ -401,7 +365,8 @@ while a < 1:
             else:
                 print(termcolor2.colored('\nIt\'s been {} days from birthday!\n'.format(days_life),"green"))
 
-        def daysOfLifeShamsi(gyear,gmonth,gday):
+                          
+def daysOfLifeShamsi(gyear,gmonth,gday):
             _gl = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
             _g  = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
             
@@ -454,7 +419,48 @@ while a < 1:
                 print('You were not born on this date.')
             else:
                 print(termcolor2.colored('\nIt\'s been {} days from birthday!'.format(days_life),"green"))
-                print(termcolor2.colored("==============\n","red"))
+                print(termcolor2.colored("==========")
+                          
+                          
+# ============= labels =============
+
+name = pyfiglet.figlet_format("Tool App")
+print(termcolor2.colored(name,"red"))
+
+by = "By: Mohammad Shokouhian"
+print(termcolor2.colored(by,"green",attrs=["bold","underline"]))
+
+# ============= if =============
+
+a = 0
+while a < 1:
+    print(termcolor2.colored("\n[1] Caculator","magenta"))
+    print(termcolor2.colored("[2] Time tool","magenta"))
+    print(termcolor2.colored("[3] Wikipedia Search","magenta"))
+    print(termcolor2.colored("[4] Rock-Scissor-Paper","magenta"))
+    print(termcolor2.colored("[5] Guess Number","magenta"))
+    print(termcolor2.colored("[6] Text to Speech","magenta"))
+    print(termcolor2.colored("[7] Shut down","magenta"))
+    print(termcolor2.colored("[8] Backgroud Changer","magenta"))
+    print(termcolor2.colored("[0] Quit\n","magenta"))
+    firstQ = input(">>> What would you like to do: ")
+    
+    if firstQ == "1":
+        runcalc()
+    elif firstQ == "2":
+        print(termcolor2.colored("\nTime Tool\n\n","yellow"))
+
+        # ============= variables =============
+
+        todayMiladi = time.localtime()
+        year = todayMiladi[0]
+        month = todayMiladi[1]
+        day = todayMiladi[2]
+        hour = todayMiladi[3]
+        minute = todayMiladi[4]
+        second = todayMiladi[5]
+        dayOfWeek = todayMiladi[6]
+        dayOfYear = todayMiladi[7]
 
         # ============= inputs and texts(time) =============
 
@@ -514,7 +520,6 @@ while a < 1:
         else:
             print("You should enter number of each parameter!")
     elif firstQ == "3":
-        import wikipedia
 
         print(termcolor2.colored("\nWikipedia","yellow"))
 
